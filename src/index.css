@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 99 102 241;
+    --color-primary-light: 129 140 248;
+    --color-secondary: 139 92 246;
+    --color-accent: 236 72 153;
+    --color-success: 16 185 129;
+    --color-warning: 245 158 11;
+    --color-error: 239 68 68;
+    --color-background: 17 24 39;
+    --color-surface: 31 41 55;
+    --color-text: 255 255 255;
+  }
+
+  body {
+    @apply bg-gray-900 text-white antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 
+      focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-light focus:ring-primary;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-opacity-90 focus:ring-secondary;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-white hover:bg-opacity-90 focus:ring-accent;
+  }
+
+  .card {
+    @apply bg-gray-800 rounded-xl shadow-xl overflow-hidden transition-transform duration-300;
+  }
+  
+  .game-card {
+    @apply card hover:scale-105 hover:shadow-2xl cursor-pointer;
+  }
+  
+  .animate-enter {
+    @apply transition-all duration-300 opacity-0 transform translate-y-4;
+  }
+  
+  .animate-enter-active {
+    @apply opacity-100 transform translate-y-0;
+  }
+
+  /* Card flip animation */
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
